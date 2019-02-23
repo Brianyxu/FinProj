@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/test.css') }}">
-
 <meta charset="utf-8">
 <title>Page Title</title>
 
 <body>
-   <h1>What's your budget?</h1>
+    <h1>Portfolyze:</h1>
+   <h3>Investment Portfolios for Dummies</h3>
    <form id = "form-id" action = "http://localhost:5000/success" method = "POST">
-      <input name = "Budget" type="number" min="1">
-      <input type = "submit" value = "submit" />
-   </form>
-   <p id="demo">ab</p>
+    <h4>What's your budget?</h4>
+    <input name = "Budget" type="number" min="1">
+    <p>
+            <select name="goal">
+            <option value="short_term">Short Term</option>
+            <option value="long_term">Long Term</option>
+            </select>
+    </p>
+    <p>
+    <input name = "submit_button" type = "submit" value = "submit" />
+    </p>
+</form>
 </body>
-
 </html>

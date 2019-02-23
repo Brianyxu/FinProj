@@ -11,7 +11,14 @@ def index():
 def success():
     if request.method == 'POST':
         result = request.form
-        print (double(int(result['Budget'])))
-        return render_template("success.html", result = result)
+        final = (double(int(result['Budget'])))
+        labels = ["January", "February", "March"]
+        values = [30,5,3]
+        colors = [ "#F7464A", "#46BFBD", "#FDB45C"]
+
+        goal = result['goal']
+        print (final)
+        print (type(goal))
+        return render_template("success.html", data = final, goal = goal, set=zip(values,labels,colors))
 if __name__ == '__main__':
     app.run(debug=True)
