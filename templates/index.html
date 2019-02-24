@@ -4,17 +4,14 @@
 <meta charset="utf-8">
 <title>Portfolize</title>
 <body id="body1">
-    <div>
     <h1>Portfolize</h1>
    <h3>Investment Portfolios made easy</h3>
    <form id = "form-id" action = "http://localhost:5000/success" method = "POST">
-    <h4>What's your budget?</h4>
+    <h5>What's your budget? (Minimum $1000)</h5>
     <input name = "Budget" type="number" min="1000">
     <p>
-            <select name="goal">
-            <option value="short-term gain">Short Term</option>
-            <option value="long-term gain">Long Term</option>
-            </select>
+    <h5>How many weeks from now do you want to sell this?(1-250)</h5>
+        <input name = "goal" type = "number" min="1" max="250">
     </p>
     <p>
         <select name="risk">
@@ -26,6 +23,6 @@
     <input name = "submit_button" type = "submit" value = "submit" />
     </p>
 </form>
-<a href = "http://localhost:5000/about">Learn more about portfolize</a>
+<p></p><a href = "http://localhost:5000/about">Learn more about portfolize</a></p>
 </body>
 </html>

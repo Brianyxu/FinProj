@@ -15,22 +15,21 @@ ST_DWRSF, LT_DWRSF = 0.4, 0.5
 ST_SBERWUU, LT_SBERWUU = 0.37, 0.71
 ST_SPBMGPPU, LT_SPBMGPPU = 0.3, 0.4
 
-SPX_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoliodata\\spx.csv'
-RUT_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoliodata\\rutnu.csv'
-SPAB_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoliodata\\spab.csv'
-GSCI_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoliodata\\spgsci.csv'
-JNK_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoliodata\\jnk.csv'
-EMB_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoliodata\\emb.csv'
-EFA_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoliodata\\efa.csv'
-DWRSF_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoliodata\\dwrsf.csv'
-SBERWUU_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoliodata\\sberwuu.csv'
-SPBMGPPU_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoliodata\\spbmgppu.csv'
+SPX_FILE_PATH = 'portfoliodata/spx.csv'
+RUT_FILE_PATH = 'portfoliodata/rutnu.csv'
+SPAB_FILE_PATH = 'portfoliodata/spab.csv'
+GSCI_FILE_PATH = 'portfoliodata/spgsci.csv'
+JNK_FILE_PATH = 'portfoliodata/jnk.csv'
+EMB_FILE_PATH = 'portfoliodata/emb.csv'
+EFA_FILE_PATH = 'portfoliodata/efa.csv'
+DWRSF_FILE_PATH = 'portfoliodata/dwrsf.csv'
+SBERWUU_FILE_PATH = 'portfoliodata/sberwuu.csv'
+SPBMGPPU_FILE_PATH = 'portfoliodata/spbmgppu.csv'
 
 
 #main function
 def run(budget, term, high_risk):
     portfolio = portfolio_list(budget)
-    print(portfolio)
     instrument_list = []
     cardinal_list = []
     prop_list = []
@@ -121,7 +120,7 @@ def tsregress(df, window_size):
 
 def get_instrument(filename):
     if filename is SPX_FILE_PATH:
-        return 'S&P 500 Index Funds'
+        return 'SP 500 Index Funds'
     elif filename is RUT_FILE_PATH:
         return 'Russell 2000 Small Cap'
     elif filename is SPAB_FILE_PATH:

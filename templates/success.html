@@ -8,18 +8,18 @@
 </head>
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/test.css') }}">
 <body id="body2">
-    <h1>Portfolio Investment</h1>
+    <h1>Optimal Portfolio Investment</h1>
     <h3>
-            You are looking for {{risk}}, {{goal}} with a budget of ${{budget}}
+            This is your {{risk}} investment of ${{budget}}, selling {{goal}} weeks from now.
     </h3>
     <div id="canvaswrap">
     <canvas id="chart" width="600" height="400"></canvas>
 </div>
     <script>
       var pieData = [
-        {% for item, label, colors in set %}
+        {% for value, label, colors in set %}
           {
-            value: {{item}},
+            value: {{value}},
             label: "{{label}}",
             color : "{{colors}}"
           },
