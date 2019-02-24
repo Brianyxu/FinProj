@@ -2,23 +2,30 @@
 <html lang="en">
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/test.css') }}">
 <meta charset="utf-8">
-<title>Page Title</title>
-
-<body>
-    <h1>Portfolyze:</h1>
-   <h3>Investment Portfolios for Dummies</h3>
+<title>Portfolize</title>
+<body id="body1">
+    <div>
+    <h1>Portfolize</h1>
+   <h3>Investment Portfolios made easy</h3>
    <form id = "form-id" action = "http://localhost:5000/success" method = "POST">
     <h4>What's your budget?</h4>
-    <input name = "Budget" type="number" min="1">
+    <input name = "Budget" type="number" min="1000">
     <p>
             <select name="goal">
-            <option value="short_term">Short Term</option>
-            <option value="long_term">Long Term</option>
+            <option value="short-term gain">Short Term</option>
+            <option value="long-term gain">Long Term</option>
             </select>
+    </p>
+    <p>
+        <select name="risk">
+            <option value="low risk">Low Risk</option>
+            <option value="high risk">High Risk</option>
+        </select>
     </p>
     <p>
     <input name = "submit_button" type = "submit" value = "submit" />
     </p>
 </form>
+<a href = "http://localhost:5000/about">Learn more about portfolize</a>
 </body>
 </html>

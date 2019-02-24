@@ -7,11 +7,11 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
 </head>
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/test.css') }}">
-<h1>
-    This is our goal: {{goal}}
-</h1>
-<body>
-    <h1>Title</h1>
+<body id="body2">
+    <h1>Portfolio Investment</h1>
+    <h3>
+            You are looking for {{risk}}, {{goal}} with a budget of ${{budget}}
+    </h3>
     <div id="canvaswrap">
     <canvas id="chart" width="600" height="400"></canvas>
 </div>
@@ -32,6 +32,7 @@
       // draw pie chart
       new Chart(document.getElementById("chart").getContext("2d")).Pie(pieData);
     </script>
-    <p>Click <a href="http://localhost:5000/">here</a> for another run.</p>
+    <p>Hover to see recommended investment in each company<br>Click <a href="http://localhost:5000/">here</a> for another run.</p>
 </body>
 </html>
+
