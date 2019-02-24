@@ -48,16 +48,16 @@ def run(budget, term, high_risk):
         increase_list.append(increase)
         if increase < 0:
             adjusted_inc = 0
-            actual_inc.append(np.float64(0.001))
-            total_sum+=.001
+            actual_inc.append(np.float64(0.02))
+            total_sum+=.02
         elif high_risk:
             adjusted_inc = increase
-            actual_inc.append(increase)
-            total_sum+=increase
+            actual_inc.append(increase+.02)
+            total_sum+=(increase+.02)
         else:
             adjusted_inc = sharpe_ratio_multiplier(filename, term, increase)
-            actual_inc.append(sharpe_ratio_multiplier(filename, term, increase))
-            total_sum+=sharpe_ratio_multiplier(filename, term, increase)
+            actual_inc.append(sharpe_ratio_multiplier(filename, term, increase)+.02)
+            total_sum+=(sharpe_ratio_multiplier(filename, term, increase)+.02)
         instrument_list.append(instrument_name)
     for i in range(len(actual_inc)):
         prop_list.append(actual_inc[i]/total_sum)

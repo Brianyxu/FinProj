@@ -14,6 +14,7 @@ def success():
         budget = int(result['Budget'])
         goal = int(result['goal'])
         risk = result['risk']
+        ## Example return value is ["labela","labelb","labelc"], [np.float64(.01),np.float64(.02),np.float64(.03)], True
         label, value, roi = run(budget, goal, risk=='high risk')
         value = value * budget
         for i in range(len(value)):
@@ -35,6 +36,6 @@ def helper(a):
 
 
 if __name__ == '__main__':
-    #app.run(debug=True)
-    port = int(os.environ.get('PORT', 33507))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)
+    #port = int(os.environ.get('PORT', 33507))
+    #app.run(host='0.0.0.0', port=port)

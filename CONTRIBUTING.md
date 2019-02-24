@@ -4,6 +4,7 @@
 
 ## Testing
 Change the url to localhost:&#60;port&#62; and run locally.
+To debug, run python3 hello.py
 ## Development environment details
 Development environment is flask, more info on their website
 
