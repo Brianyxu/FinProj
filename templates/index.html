@@ -2,15 +2,15 @@
 <html lang="en">
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/test.css') }}">
 <meta charset="utf-8">
-<title>portfolize</title>
+<title>portfolize.</title>
 <body id="body1">
-    <h1 style = "font-family:georgia">portfolize</h1>
-   <h3>Investment Portfolios made easy</h3>
+    <h1>portfolize.</h1>
+   <h3>Index Driven Portfolio.</h3>
    <form id = "form-id" action = "http://localhost:5000/success" method = "POST">
-    <h5>What's your budget? (Minimum $1000)</h5>
+    <h5>Investment Budget (Minimum $1000)</h5>
     <input name = "Budget" type="number" min="1000">
     <p>
-    <h5>How many weeks from now do you want to sell this?(1-250)</h5>
+    <h5>Weeks until selling (1 to 250 weeks)</h5>
         <input name = "goal" type = "number" min="1" max="250">
     </p>
     <p>
