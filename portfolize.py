@@ -45,7 +45,7 @@ def run(budget, term, high_risk):
 
         increase = percent_inc(df, term)
         if increase < 0:
-            adjusted_inc=0.01
+            adjusted_inc=0.001
         elif high_risk:
             adjusted_inc += increase
         else:
