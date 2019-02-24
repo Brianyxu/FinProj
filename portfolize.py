@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import math
 from statsmodels.tsa.ar_model import AR
 from statsmodels.tsa.ar_model import ARResults
 from sklearn.metrics import mean_squared_error
@@ -57,10 +58,9 @@ def run(budget, term, high_risk):
     for e in cardinal_list:
         num = e / total_sum
         prop_list.append(num)
-
-    roi = (1+math.pow((float(total_sum)),math.exp(1))*5)*budget
     
-    return instrument_list, prop_list, roi
+    roi = (1+math.pow((float(total_sum)),math.exp(1))*5)*budget
+    return instrument_list, prop_list
 
 
 #determines user's list of investment options
