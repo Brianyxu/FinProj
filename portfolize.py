@@ -58,7 +58,9 @@ def run(budget, term, high_risk):
         num = e / total_sum
         prop_list.append(num)
 
-    return instrument_list, prop_list
+    roi = (1+math.pow((float(total_sum)),math.exp(1))*5)*budget
+    
+    return instrument_list, prop_list, roi
 
 
 #determines user's list of investment options
