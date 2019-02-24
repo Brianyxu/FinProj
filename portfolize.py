@@ -32,10 +32,11 @@ SPBMGPPU_FILE_PATH = 'portfoliodata/spbmgppu.csv'
 def run(budget, term, high_risk):
     portfolio = portfolio_list(budget)
     instrument_list = []
-    cardinal_list = []
     prop_list = []
     total_sum = 0
-
+    final = 0
+    actual_inc = []
+    increase_list=[]
     for i in portfolio:
         filename = i
         adjusted_inc = 0
@@ -44,25 +45,25 @@ def run(budget, term, high_risk):
         df = pd.read_csv(filename, parse_dates=['date'], index_col='date', date_parser=dateparse, header=0)
 
         increase = percent_inc(df, term)
+        increase_list.append(increase)
         if increase < 0:
-            adjusted_inc=.001
+            adjusted_inc = 0
+            actual_inc.append(np.float64(0.001))
+            total_sum+=.001
         elif high_risk:
-            adjusted_inc += increase
+            adjusted_inc = increase
+            actual_inc.append(increase)
+            total_sum+=increase
         else:
-            adjusted_inc += sharpe_ratio_multiplier(filename, term, increase)
-        print (adjusted_inc)
-        total_sum += adjusted_inc
+            adjusted_inc = sharpe_ratio_multiplier(filename, term, increase)
+            actual_inc.append(sharpe_ratio_multiplier(filename, term, increase))
+            total_sum+=sharpe_ratio_multiplier(filename, term, increase)
         instrument_list.append(instrument_name)
-        cardinal_list.append(adjusted_inc)
-
-    for e in cardinal_list:
-        num = e / total_sum
-        prop_list.append(num)
+    for i in range(len(actual_inc)):
+        prop_list.append(actual_inc[i]/total_sum)
+        final+=actual_inc[i]*budget / total_sum * (1 +increase_list[i])
     
-    roi = (1+total_sum)*budget
-    print(cardinal_list)
-    return instrument_list, prop_list, roi
-
+    return instrument_list, prop_list, final
 
 #determines user's list of investment options
 def portfolio_list(budget):
