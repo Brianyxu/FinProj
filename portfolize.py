@@ -8,7 +8,7 @@ from sklearn.metrics import mean_squared_error
 ST_SPX, LT_SPX = 1, 0.9
 ST_RUT, LT_RUT = 0.47, 0.81
 ST_SPAB, LT_SPAB = 0.59, 1.09
-ST_GSCI, LT_GSCI = -0.1, -0.19
+ST_GSCI, LT_GSCI = 0.1, 0.19
 ST_JNK, LT_JNK = 0.41, 1.01
 ST_EMB, LT_EMB = 0.74, 1.02
 ST_EFA, LT_EFA = 0.21, 0.54
@@ -50,7 +50,7 @@ def run(budget, term, high_risk):
             adjusted_inc += increase
         else:
             adjusted_inc += sharpe_ratio_multiplier(filename, term, increase)
-
+        print (adjusted_inc)
         total_sum += adjusted_inc
         instrument_list.append(instrument_name)
         cardinal_list.append(adjusted_inc)
@@ -59,7 +59,8 @@ def run(budget, term, high_risk):
         num = e / total_sum
         prop_list.append(num)
     
-    roi = (1+math.pow((float(total_sum)),math.exp(1))*5)*budget
+    roi = (1+total_sum)*budget
+    print(cardinal_list)
     return instrument_list, prop_list, roi
 
 

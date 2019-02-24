@@ -2,11 +2,11 @@
 <html lang="en">
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/test.css') }}">
 <meta charset="utf-8">
-<title>Portfolize</title>
+<title>portfolize</title>
 <body id="body1">
-    <h1>Portfolize</h1>
+    <h1 style = "font-family:georgia">portfolize</h1>
    <h3>Investment Portfolios made easy</h3>
-   <form id = "form-id" action = "https://salty-ridge-11736.herokuapp.com/success" method = "POST">
+   <form id = "form-id" action = "http://localhost:5000/success" method = "POST">
     <h5>What's your budget? (Minimum $1000)</h5>
     <input name = "Budget" type="number" min="1000">
     <p>
@@ -23,6 +23,6 @@
     <input name = "submit_button" type = "submit" value = "submit" />
     </p>
 </form>
-<p></p><a href = "https://salty-ridge-11736.herokuapp.com/about">Learn more about portfolize</a></p>
+<p></p><a href = "http://localhost:5000/about">Learn more about portfolize</a></p>
 </body>
 </html>
