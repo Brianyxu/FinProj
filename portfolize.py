@@ -27,6 +27,7 @@ SBERWUU_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoli
 SPBMGPPU_FILE_PATH = 'C:\\Users\\ms980\\Documents\\projects\\portfolize\\portfoliodata\\spbmgppu.csv'
 
 
+
 #main function
 def run(budget, term, high_risk):
     portfolio = portfolio_list(budget)
