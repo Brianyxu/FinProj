@@ -16,8 +16,7 @@ account the Sharpe Ratio, a risk adjusted variable, to include the effect of vol
 ## What Languages/Packages Did You Guys Use?
 For developing the model, we primarily used Python's pandas and statsmodels data analysis tool to analyze and forecast the future expected
 prices of indices using time series regression and AutoRegression Modeling, a simple machine learning method. For front-end, we decided to
-build this on a webapp platform for a universal access. As expected, we've used html, CSS and flask mostly for the front end. We've also 
-deployed the website using Heroku platform!
+build this on a webapp platform for a universal access. As expected, we've used html and CSS for the front end and flask for the back end. We've also deployed the website using Heroku platform!
 
 ## What Challenges Did You Guys Run Into, and What Did You Guys Learn?
 Trying to come up with the most accurate and efficient modeling was definitely the most challenging task. Deploying the website was also
